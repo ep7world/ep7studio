@@ -44,7 +44,7 @@
     .gallery-container {
       display: flex;
       width: 100%;
-      max-width: 1100px;
+      max-width: 1200px;
       height: 550px;
       gap: 15px;
     }
@@ -83,7 +83,6 @@
       opacity: 1;
     }
 
-    /* Título vertical u horizontal según el estado */
     .card-title {
       font-size: 1.5rem;
       font-weight: bold;
@@ -92,7 +91,6 @@
       color: #00f0ff;
     }
 
-    /* Descripción que solo aparece al expandir */
     .card-info {
       max-height: 0;
       opacity: 0;
@@ -109,7 +107,7 @@
       margin-top: 10px;
     }
 
-    /* Ajuste para teléfonos móviles */
+    /* Ajuste para móviles */
     @media (max-width: 768px) {
       .gallery-container {
         flex-direction: column;
@@ -133,43 +131,43 @@
 
   <div class="gallery-container">
     
-    <!-- Tarjeta 1 -->
-    <div class="card" style="background-image: url('https://picsum.photos/id/1025/800/1000');">
+    <!-- Brujita -->
+    <div class="card" style="background-image: url('brujita.png');">
       <div class="card-overlay">
-        <div class="card-title">Obra 01 — Concept Art</div>
-        <div class="card-info">
-          Descripción o historia de tu primer personaje u obra de arte. Aquí puedes poner técnica, año o detalles del personaje.
-        </div>
+        <div class="card-title">Brujita</div>
+        <div class="card-info">Ilustración / Concept Art.</div>
       </div>
     </div>
 
-    <!-- Tarjeta 2 -->
-    <div class="card" style="background-image: url('https://picsum.photos/id/1062/800/1000');">
+    <!-- Espada -->
+    <div class="card" style="background-image: url('espada.png');">
       <div class="card-overlay">
-        <div class="card-title">Obra 02 — Armas & Items</div>
-        <div class="card-info">
-          Detalles de tu segunda ilustración. Al pasar el ratón, la imagen se expande suavemente como en el juego.
-        </div>
+        <div class="card-title">Espada</div>
+        <div class="card-info">Diseño de arma / Prop.</div>
       </div>
     </div>
 
-    <!-- Tarjeta 3 -->
-    <div class="card" style="background-image: url('https://picsum.photos/id/1069/800/1000');">
+    <!-- Luna -->
+    <div class="card" style="background-image: url('luna.png');">
       <div class="card-overlay">
-        <div class="card-title">Obra 03 — Ilustración Completa</div>
-        <div class="card-info">
-          Puedes agregar cuantas tarjetas quieras dentro del código duplicando este bloque de la tarjeta.
-        </div>
+        <div class="card-title">Luna</div>
+        <div class="card-info">Arte conceptual.</div>
       </div>
     </div>
 
-    <!-- Tarjeta 4 -->
-    <div class="card" style="background-image: url('https://picsum.photos/id/1024/800/1000');">
+    <!-- Blanca -->
+    <div class="card" style="background-image: url('blanca.png');">
       <div class="card-overlay">
-        <div class="card-title">Obra 04 — Diseños 3D</div>
-        <div class="card-info">
-          Espacio dedicado para tus modelos, bocetos o ilustraciones finales.
-        </div>
+        <div class="card-title">Blanca</div>
+        <div class="card-info">Diseño de personaje.</div>
+      </div>
+    </div>
+
+    <!-- Rosada -->
+    <div class="card" style="background-image: url('rosada.png');">
+      <div class="card-overlay">
+        <div class="card-title">Rosada</div>
+        <div class="card-info">Ilustración digital.</div>
       </div>
     </div>
 
