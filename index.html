@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ep7studio | Portafolio de Arte</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0f0f11;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    header p {
+      color: #a0a0a0;
+      margin-top: 5px;
+    }
+
+    /* Contenedor del Acordeón */
+    .gallery-container {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      height: 550px;
+      gap: 15px;
+    }
+
+    /* Tarjeta individual */
+    .card {
+      position: relative;
+      flex: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Al pasar el cursor, la tarjeta se expande */
+    .card:hover {
+      flex: 5;
+    }
+
+    /* Sombra oscura sobre la imagen */
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      opacity: 0.6;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover .card-overlay {
+      opacity: 1;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      color: #00f0ff;
+    }
+
+    .card-info {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      color: #d1d1d1;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .card:hover .card-info {
+      max-height: 150px;
+      opacity: 1;
+      margin-top: 10px;
+    }
+
+    /* Ajuste para móviles */
+    @media (max-width: 768px) {
+      .gallery-container {
+        flex-direction: column;
+        height: auto;
+      }
+      .card {
+        height: 180px;
+      }
+      .card:hover {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ep7studio</h1>
+    <p>Portafolio Digital & Galería de Arte</p>
+  </header>
+
+  <div class="gallery-container">
+    
+    <div class="card" style="background-image: url('brujita.png');">
+      <div class="card-overlay">
+        <div class="card-title">Brujita</div>
+        <div class="card-info">Ilustración / Concept Art.</div>
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('espada.png');">
+      <div class="card-overlay">
+        <div class="card-title">Espada</div>
+        <div class="card-info">Diseño de arma / Prop.</div>
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('luna.png');">
+      <div class="card-overlay">
+        <div class="card-title">Luna</div>
+        <div class="card-info">Arte conceptual.</div>
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('blanca.png');">
+      <div class="card-overlay">
+        <div class="card-title">Blanca</div>
+        <div class="card-info">Diseño de personaje.</div>
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('rosada.png');">
+      <div class="card-overlay">
+        <div class="card-title">Rosada</div>
+        <div class="card-info">Ilustración digital.</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
