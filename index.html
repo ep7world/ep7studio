@@ -12,7 +12,7 @@
     }
 
     body {
-      background-color: #f4f5f8; /* Fondo claro como el de la referencia */
+      background-color: #f4f5f8;
       color: #1a1a1a;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-height: 100vh;
@@ -55,35 +55,35 @@
       justify-content: center;
     }
 
-    /* Tarjeta individual - Paralelogramo inclinado mediante transform skew */
+    /* Tarjeta individual con inclinación de paralelogramo */
     .card {
       position: relative;
       flex: 1;
       height: 480px;
       cursor: pointer;
       transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-      /* Inclinación exacta en paralelo */
       transform: skewX(-22deg);
       overflow: hidden;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
-    /* Para que la imagen dentro no se distorsione por la inclinación */
+    /* Imagen de fondo corregida */
     .card-bg {
       position: absolute;
       top: -10%;
-      left: -30%;
-      width: 160%;
+      left: -50%;
+      width: 200%;
       height: 120%;
       background-size: cover;
-      background-position: center;
-      /* Deshacemos la inclinación para la imagen interna */
-      transform: skewX(22deg) scale(1.1);
-      transition: transform 0.5s ease, filter 0.5s ease;
+      /* Enfoca la parte superior (las caras) */
+      background-position: top center;
+      /* Deshace la inclinación para que la imagen no se deforme */
+      transform: skewX(22deg);
+      transition: filter 0.5s ease;
       filter: brightness(0.85);
     }
 
-    /* ESCALONADO VERTICAL (Niveles distintos como en la imagen) */
+    /* ESCALONADO VERTICAL */
     .card:nth-child(1) { transform: skewX(-22deg) translateY(-40px); }
     .card:nth-child(2) { transform: skewX(-22deg) translateY(30px); }
     .card:nth-child(3) { transform: skewX(-22deg) translateY(-20px); }
@@ -92,14 +92,14 @@
 
     /* Al pasar el cursor (Hover) */
     .card:hover {
-      flex: 3;
+      flex: 3.5;
       z-index: 10;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
     .card:hover .card-bg {
       filter: brightness(1.05);
-      transform: skewX(22deg) scale(1.2);
+      /* Ya no hace zoom gigantesco al centro */
     }
 
     /* Sombra y texto inferior */
@@ -111,7 +111,6 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 25px;
-      /* Compensación del ángulo para el texto */
       transform: skewX(22deg);
       opacity: 0.8;
       transition: opacity 0.4s ease;
@@ -176,7 +175,7 @@
       <div class="card-bg" style="background-image: url('brujita.png');"></div>
       <div class="card-overlay">
         <div class="card-title">Brujita</div>
-        <div class="card-info">Ilustración / Concept Art</div>
+        <div class="card-info">Ilustración / Arte conceptual</div>
       </div>
     </div>
 
