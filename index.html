@@ -55,7 +55,7 @@
       justify-content: center;
     }
 
-    /* Tarjeta individual con inclinación de paralelogramo */
+    /* Tarjeta individual */
     .card {
       position: relative;
       flex: 1;
@@ -67,21 +67,39 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
-    /* Imagen de fondo */
+    /* Imagen de fondo base */
     .card-bg {
       position: absolute;
       top: 0;
-      left: -50%;
-      width: 200%;
+      left: -40%;
+      width: 180%;
       height: 100%;
       background-size: cover;
-      /* ENFOQUE INICIAL: Centrado arriba para ver caras */
-      background-position: top center;
-      /* Deshace la inclinación para que la imagen no se deforme */
       transform: skewX(22deg);
-      transition: filter 0.5s ease, background-position 0.5s ease, transform 0.5s ease;
+      transition: filter 0.5s ease, background-position 0.5s ease;
       filter: brightness(0.85);
     }
+
+    /* ENCUADRES ESPECÍFICOS PARA CADA PERSONAJE */
+    /* 1. Brujita */
+    .card:nth-child(1) .card-bg { background-position: 70% top; }
+    .card:nth-child(1):hover .card-bg { background-position: 65% 20%; }
+
+    /* 2. Espada */
+    .card:nth-child(2) .card-bg { background-position: 70% top; }
+    .card:nth-child(2):hover .card-bg { background-position: 60% 20%; }
+
+    /* 3. Luna */
+    .card:nth-child(3) .card-bg { background-position: center top; }
+    .card:nth-child(3):hover .card-bg { background-position: center 15%; }
+
+    /* 4. Blanca (Corrige el error del caballo enfocando la cara de la chica) */
+    .card:nth-child(4) .card-bg { background-position: 85% top; }
+    .card:nth-child(4):hover .card-bg { background-position: 80% 10%; }
+
+    /* 5. Rosada */
+    .card:nth-child(5) .card-bg { background-position: 75% top; }
+    .card:nth-child(5):hover .card-bg { background-position: 70% 15%; }
 
     /* ESCALONADO VERTICAL */
     .card:nth-child(1) { transform: skewX(-22deg) translateY(-40px); }
@@ -90,7 +108,7 @@
     .card:nth-child(4) { transform: skewX(-22deg) translateY(50px); }
     .card:nth-child(5) { transform: skewX(-22deg) translateY(-30px); }
 
-    /* Al pasar el cursor (Hover) */
+    /* Hover */
     .card:hover {
       flex: 3.5;
       z-index: 10;
@@ -99,11 +117,6 @@
 
     .card:hover .card-bg {
       filter: brightness(1.05);
-      /* SOLUCIÓN AL ZOOM: Bajamos la cámara suavemente al hacer hover */
-      /* Al expandirse, la imagen se re-encuadra hacia abajo para revelar cuerpo */
-      background-position: center center;
-      /* Eliminamos cualquier scale(1.2) que hacía el zoom feo */
-      transform: skewX(22deg) scale(1);
     }
 
     /* Sombra y texto inferior */
