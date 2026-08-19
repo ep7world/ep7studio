@@ -67,19 +67,19 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
-    /* Imagen de fondo corregida */
+    /* Imagen de fondo */
     .card-bg {
       position: absolute;
-      top: -10%;
+      top: 0;
       left: -50%;
       width: 200%;
-      height: 120%;
+      height: 100%;
       background-size: cover;
-      /* Enfoca la parte superior (las caras) */
+      /* ENFOQUE INICIAL: Centrado arriba para ver caras */
       background-position: top center;
       /* Deshace la inclinación para que la imagen no se deforme */
       transform: skewX(22deg);
-      transition: filter 0.5s ease;
+      transition: filter 0.5s ease, background-position 0.5s ease, transform 0.5s ease;
       filter: brightness(0.85);
     }
 
@@ -99,7 +99,11 @@
 
     .card:hover .card-bg {
       filter: brightness(1.05);
-      /* Ya no hace zoom gigantesco al centro */
+      /* SOLUCIÓN AL ZOOM: Bajamos la cámara suavemente al hacer hover */
+      /* Al expandirse, la imagen se re-encuadra hacia abajo para revelar cuerpo */
+      background-position: center center;
+      /* Eliminamos cualquier scale(1.2) que hacía el zoom feo */
+      transform: skewX(22deg) scale(1);
     }
 
     /* Sombra y texto inferior */
